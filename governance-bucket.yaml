@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template for a standardized governance S3 bucket.'
+
+Parameters:
+  BucketNameSuffix:
+    Type: String
+    Description: 'A unique suffix for the bucket name.'
+
+Resources:
+  StandardGovernanceBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub 'standard-governance-bucket-${BucketNameSuffix}'
+      Tags:
+        - Key: 'Compliance'
+          Value: 'Governance-Standard'
+        - Key: 'Environment'
+          Value: 'SysOps-Lab'
