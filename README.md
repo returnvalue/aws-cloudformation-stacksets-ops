@@ -30,8 +30,7 @@ The system implements a centralized governance and deployment model:
     ```bash
     terraform init
     terraform apply -auto-approve
-    
-```
+    ```
 
 ## Verification & Testing
 
@@ -41,24 +40,21 @@ To test the governance and deployment:
     ```bash
     awslocal cloudformation list-stacks
     aws cloudformation list-stacks
-    
-```
+    ```
 
 2.  **Confirm Standardized Resources:**
     List the S3 buckets to see the standardized naming convention in action:
     ```bash
     awslocal s3 ls
     aws s3 ls
-    
-```
+    ```
 
 3.  **Inspect Stack Resources:**
     Verify the tags and configuration for a specific stack instance:
     ```bash
     awslocal cloudformation describe-stack-resources --stack-name governance-stack-instance-1
     aws cloudformation describe-stack-resources --stack-name governance-stack-instance-1
-    
-```
+    ```
 
 ## Cleanup
 
